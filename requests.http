@@ -1,0 +1,29 @@
+### Variables
+@userService = http://localhost:5001
+@orderService = http://localhost:5002
+
+### Salud del Servicio de Usuarios
+GET {{userService}}/health
+
+### Salud del Servicio de Pedidos
+GET {{orderService}}/health
+
+### Crear un pedido para un usuario existente (id 1)
+# Respuesta esperada: 201 Created, incluye los datos del usuario obtenidos por REST
+POST {{orderService}}/pedidos
+Content-Type: application/json
+
+{
+  "usuario_id": 1,
+  "producto": "Cafe Especial 500g"
+}
+
+### Intentar crear un pedido para un usuario que no existe
+# Respuesta esperada: 404 Not Found, "El usuario indicado no existe"
+POST {{orderService}}/pedidos
+Content-Type: application/json
+
+{
+  "usuario_id": 99,
+  "producto": "Prueba"
+}

@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="7qxjZFBOMskrsUNM8Yhn">
+    <mxGraphModel dx="503" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" plantUmlData="{&#xa;  &quot;data&quot;: &quot;@startuml Arquitectura_Microservicios\n\nleft to right direction\n\nskinparam backgroundColor #FFFFFF\nskinparam monochrome true\nskinparam shadowing false\nskinparam roundCorner 10\nskinparam defaultTextAlignment center\n\nskinparam rectangle {\n  BorderColor black\n  FontStyle bold\n}\nskinparam database {\n  BorderColor black\n}\n\ntitle Arquitectura de Microservicios - Ejercicio Práctico\n\nrectangle \&quot;Cliente\\n(Postman / curl / Web)\&quot; as Cliente\n\nrectangle \&quot;Servicio de Pedidos\\n(puerto 5002)\\n--\\nGET /pedidos\\nPOST /pedidos\&quot; as Pedidos\ndatabase \&quot;BD Pedidos\\n(en memoria)\&quot; as DBPedidos\n\nrectangle \&quot;Servicio de Usuarios\\n(puerto 5001)\\n--\\nGET /usuarios/:id\\nPOST /usuarios\&quot; as Usuarios\ndatabase \&quot;BD Usuarios\\n(en memoria)\&quot; as DBUsuarios\n\nCliente -right-&gt; Pedidos : (1) POST /pedidos\nPedidos -right-&gt; Usuarios : (2) GET /usuarios/{id}\\n&lt;b&gt;llamada REST interna&lt;/b&gt;\nPedidos -down-&gt; DBPedidos : (3) guarda pedido\nUsuarios -down-&gt; DBUsuarios : consulta usuario\n\n@enduml&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="3bY99htBprmfd6jjHefv-37">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Cliente&#xa;(Postman / curl / Web)" plantUmlId="n_0" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;strokeWidth=1;fillColor=#F1F1F1;strokeColor=#000000;whiteSpace=wrap;shadow=0;fontStyle=1;align=center;" plantUmlBaseValue="Cliente&#xa;(Postman / curl / Web)" id="3bY99htBprmfd6jjHefv-48">
+          <mxCell parent="3bY99htBprmfd6jjHefv-37" style="rounded=1;absoluteArcSize=1;arcSize=10;strokeWidth=1;fillColor=#F1F1F1;strokeColor=#000000;whiteSpace=wrap;shadow=0;fontStyle=1;align=center;" vertex="1">
+            <mxGeometry height="49" width="191" x="40" y="98.5" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Servicio de Pedidos&#xa;(puerto 5002)&#xa;--&#xa;GET /pedidos&#xa;POST /pedidos" plantUmlId="n_1" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;strokeWidth=1;fillColor=#F1F1F1;strokeColor=#000000;whiteSpace=wrap;shadow=0;fontStyle=1;align=center;" plantUmlBaseValue="Servicio de Pedidos&#xa;(puerto 5002)&#xa;--&#xa;GET /pedidos&#xa;POST /pedidos" id="3bY99htBprmfd6jjHefv-49">
+          <mxCell parent="3bY99htBprmfd6jjHefv-37" style="rounded=1;absoluteArcSize=1;arcSize=10;strokeWidth=1;fillColor=#F1F1F1;strokeColor=#000000;whiteSpace=wrap;shadow=0;fontStyle=1;align=center;" vertex="1">
+            <mxGeometry height="94" width="170" x="382" y="76" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="BD Pedidos&#xa;(en memoria)" plantUmlId="n_2" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#000000;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=10;absoluteArcSize=1;shadow=0;align=center;" plantUmlBaseValue="BD Pedidos&#xa;(en memoria)" id="3bY99htBprmfd6jjHefv-50">
+          <mxCell parent="3bY99htBprmfd6jjHefv-37" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#000000;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=10;absoluteArcSize=1;shadow=0;align=center;" vertex="1">
+            <mxGeometry height="78" width="107" x="413.5" y="212" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Servicio de Usuarios&#xa;(puerto 5001)&#xa;--&#xa;GET /usuarios/:id&#xa;POST /usuarios" plantUmlId="n_3" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;strokeWidth=1;fillColor=#F1F1F1;strokeColor=#000000;whiteSpace=wrap;shadow=0;fontStyle=1;align=center;" plantUmlBaseValue="Servicio de Usuarios&#xa;(puerto 5001)&#xa;--&#xa;GET /usuarios/:id&#xa;POST /usuarios" id="3bY99htBprmfd6jjHefv-51">
+          <mxCell parent="3bY99htBprmfd6jjHefv-37" style="rounded=1;absoluteArcSize=1;arcSize=10;strokeWidth=1;fillColor=#F1F1F1;strokeColor=#000000;whiteSpace=wrap;shadow=0;fontStyle=1;align=center;" vertex="1">
+            <mxGeometry height="94" width="178" x="761" y="76" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="BD Usuarios&#xa;(en memoria)" plantUmlId="n_4" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#000000;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=10;absoluteArcSize=1;shadow=0;align=center;" plantUmlBaseValue="BD Usuarios&#xa;(en memoria)" id="3bY99htBprmfd6jjHefv-52">
+          <mxCell parent="3bY99htBprmfd6jjHefv-37" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#000000;fontSize=14;whiteSpace=wrap;rounded=1;arcSize=10;absoluteArcSize=1;shadow=0;align=center;" vertex="1">
+            <mxGeometry height="78" width="107" x="796.5" y="212" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="(1) POST /pedidos" plantUmlId="e_5" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="(1) POST /pedidos" id="3bY99htBprmfd6jjHefv-53">
+          <mxCell edge="1" parent="3bY99htBprmfd6jjHefv-37" source="3bY99htBprmfd6jjHefv-48" style="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="3bY99htBprmfd6jjHefv-49">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="(2) GET /usuarios/{id}&#xa;llamada REST interna" plantUmlId="e_6" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="(2) GET /usuarios/{id}&#xa;llamada REST interna" id="3bY99htBprmfd6jjHefv-54">
+          <mxCell edge="1" parent="3bY99htBprmfd6jjHefv-37" source="3bY99htBprmfd6jjHefv-49" style="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="3bY99htBprmfd6jjHefv-51">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="(3) guarda pedido" plantUmlId="e_7" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="(3) guarda pedido" id="3bY99htBprmfd6jjHefv-55">
+          <mxCell edge="1" parent="3bY99htBprmfd6jjHefv-37" source="3bY99htBprmfd6jjHefv-49" style="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="3bY99htBprmfd6jjHefv-50">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="consulta usuario" plantUmlId="e_8" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="consulta usuario" id="3bY99htBprmfd6jjHefv-56">
+          <mxCell edge="1" parent="3bY99htBprmfd6jjHefv-37" source="3bY99htBprmfd6jjHefv-51" style="strokeColor=#181818;fontColor=#000000;fontSize=12;html=1;labelBackgroundColor=#FFFFFF;endArrow=classicThin;endFill=1;align=center;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="3bY99htBprmfd6jjHefv-52">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Arquitectura de Microservicios simples" plantUmlId="title_9" plantUmlBaseStyle="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" plantUmlBaseValue="Arquitectura de Microservicios - Ejercicio Práctico" id="3bY99htBprmfd6jjHefv-57">
+          <mxCell parent="3bY99htBprmfd6jjHefv-37" style="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1">
+            <mxGeometry height="24" width="381" x="276.5" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
